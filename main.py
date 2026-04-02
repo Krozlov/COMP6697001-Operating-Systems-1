@@ -12,12 +12,12 @@ lock        = threading.Lock()
 not_empty   = threading.Condition(lock)
 not_full    = threading.Condition(lock)
 
-produced_count  = 0
-consumed_count  = 0
-all_numbers     = []
+prodCnt  = 0
+consCnt  = 0
+all_numbers = []
 
 def producer():
-    global produced_count
+    global prodCnt
 
     for _ in range(MAX_COUNT):
         num = random.randint(LOWER_NUM, UPPER_NUM)
@@ -28,7 +28,7 @@ def producer():
 
             buffer.append(num)
             all_numbers.append(num)
-            produced_count += 1
+            prodCnt += 1
 
             not_empty.notify_all()
 
@@ -37,20 +37,20 @@ def consumer(parity: int, filename: str):
     #0 -> even
     #1 -> odd
 
-    global consumed_count
+    global consCnt
     results = []
 
     while True:
         with not_empty:
             while True:
-                if consumed_count >= MAX_COUNT:
+                if consCnt >= MAX_COUNT:
                     break
 
                 if buffer:
                     top = buffer[-1]
                     if top % 2 == parity:
                         buffer.pop()
-                        consumed_count += 1
+                        consCnt += 1
                         results.append(top)
 
                         not_full.notify_all()
@@ -60,10 +60,10 @@ def consumer(parity: int, filename: str):
                 else:
                     not_empty.wait(timeout=0.001)
 
-            if consumed_count >= MAX_COUNT and (not buffer or buffer[-1] % 2 != parity):
+            if consCnt >= MAX_COUNT and (not buffer or buffer[-1] % 2 != parity):
                 while buffer and buffer[-1] % 2 == parity:
                     top = buffer.pop()
-                    consumed_count += 1
+                    consCnt += 1
                     results.append(top)
                     not_full.notify_all()
                 break

@@ -33,13 +33,14 @@ Multi-threaded program with **1 Producer** and **2 Consumer** threads:
 | Days | 0 |
 | Hours | 0 |
 | Minutes | 0 |
-| **Seconds** | **1** |
-| Milliseconds | 815 |
-| Ticks | 18,154,703 |
-| TotalDays | 2.10123877314815E-05 |
-| TotalHours | 0.000504297305555556 |
-| TotalMinutes | 0.0302578383333333 |
-| **TotalSeconds** | **1.8154703** |
+| **Seconds** | **0** |
+| Milliseconds | 661 |
+| Ticks | 6,618,787 |
+| TotalDays | 7.66063310185185E-06 |
+| TotalHours | 0.000183855194444444 |
+| TotalMinutes | 0.0110313116666667 |
+| **TotalSeconds** | **0.6618787** |
+| TotalMilliseconds | 661.8787 |
 
 ---
 
