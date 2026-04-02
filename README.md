@@ -1,6 +1,6 @@
 # BINUS University International
-## COMP6697001 - Operating Systems
-### Assignment 1 — Producer-Consumer Thread Synchronization
+## COMP6697001 Operating Systems
+### Assignment 1 Producer-Consumer Thread Sync
 
 ---
 
