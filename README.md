@@ -51,3 +51,9 @@ Multi-threaded program with **1 Producer** and **2 Consumer** threads:
 | `all.txt` | All 10,000 generated numbers in order |
 | `even.txt` | Only even numbers removed from stack |
 | `odd.txt` | Only odd numbers removed from stack |
+
+## AI Disclosure
+ 
+AI assistance (Claude by Anthropic) was used in this project for:
+- Writing and refactoring a small part of the code to be cleaner and more readable
+- Generating this README
